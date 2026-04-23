@@ -51,6 +51,28 @@ python scripts/run_experiment.py --config configs/config.yaml
 | 5 | **Metrics** | Compute ASR per model, per style, neutral vs. stylized |
 | 6 | **Neutralization** | Re-evaluate after stripping styles to measure mitigation |
 
+##   Pipeline Execution Results
+The pipeline ran end-to-end in simulation mode:
+
+30 base prompts × 12 style variants × 4 models = 1,440 evaluations
+## 📊 Key Metrics
+
+| Metric                | Value                          |
+|----------------------|--------------------------------|
+| Neutral ASR          | 20.8%                          |
+| Stylized ASR         | 28.6%                          |
+| ASR Increase         | +7.7% (37.1% relative)         |
+| Most Effective Style | Flattering (50.8% ASR)         |
+| Most Vulnerable Model| Qwen-1.5-72B (37.8% ASR)       |
+
+## 🛡️ Neutralization Experiment
+
+| Metric                  | Value             |
+|-------------------------|-------------------|
+| Pre-neutralization ASR  | 28.6%             |
+| Post-neutralization ASR | 0.0%              |
+| Mitigation effectiveness| 28.6% reduction   |
+
 ## Linguistic Styles (11)
 
 Angry · Curious · Desperate · Fearful · Flattering · Kind · Passive-Aggressive · Polite · Sad · Scolding · Threatening

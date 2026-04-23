@@ -1,0 +1,5 @@
+model,asr,unethical_count,total
+GPT-4-Turbo,0.1303,43,330
+LLaMA-3-70B,0.203,67,330
+Mistral-Large,0.1727,57,330
+Qwen-1.5-72B,0.2515,83,330

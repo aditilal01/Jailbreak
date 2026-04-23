@@ -1,0 +1,80 @@
+# =============================================================================
+# Say It Differently - Experiment Configuration
+# Paper: "Say It Differently: Linguistic Styles as Jailbreak Vectors"
+# =============================================================================
+
+experiment:
+  name: "linguistic_style_jailbreak_eval"
+  seed: 42
+  output_dir: "results"
+
+# ---------------------------------------------------------------------------
+# Dataset settings
+# ---------------------------------------------------------------------------
+dataset:
+  # Options: multijail, jailbreakhub, harmbench, all
+  source: "all"
+  sample_size: 30  # prompts per dataset (set null for all)
+
+# ---------------------------------------------------------------------------
+# Linguistic styles to evaluate (from the paper)
+# ---------------------------------------------------------------------------
+styles:
+  - angry
+  - curious
+  - desperate
+  - fearful
+  - flattering
+  - kind
+  - passive_aggressive
+  - polite
+  - sad
+  - scolding
+  - threatening
+
+# ---------------------------------------------------------------------------
+# Style augmentation method
+# ---------------------------------------------------------------------------
+augmentation:
+  # Options: template, llm
+  method: "template"
+  # Only used if method=llm
+  llm_model: "gpt-4"
+  openai_api_key: null  # set via env var OPENAI_API_KEY
+
+# ---------------------------------------------------------------------------
+# Target models to evaluate
+# ---------------------------------------------------------------------------
+models:
+  # Options: simulated, openai, huggingface
+  backend: "simulated"
+  targets:
+    - name: "GPT-4-Turbo"
+      provider: "openai"
+      model_id: "gpt-4-turbo"
+    - name: "LLaMA-3-70B"
+      provider: "huggingface"
+      model_id: "meta-llama/Meta-Llama-3-70B-Instruct"
+    - name: "Qwen-1.5-72B"
+      provider: "huggingface"
+      model_id: "Qwen/Qwen1.5-72B-Chat"
+    - name: "Mistral-Large"
+      provider: "huggingface"
+      model_id: "mistralai/Mistral-Large-Instruct-2407"
+  temperature: 0.7
+  max_tokens: 512
+
+# ---------------------------------------------------------------------------
+# Evaluation (LLM-as-Judge)
+# ---------------------------------------------------------------------------
+evaluation:
+  # Options: simulated, llm
+  method: "simulated"
+  judge_model: "gpt-4"
+
+# ---------------------------------------------------------------------------
+# Neutralization experiment
+# ---------------------------------------------------------------------------
+neutralization:
+  enabled: true
+  method: "template"  # template or llm

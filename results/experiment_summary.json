@@ -1,0 +1,31 @@
+{
+  "experiment": "linguistic_style_jailbreak_eval",
+  "total_prompts": 30,
+  "total_evaluations": 1440,
+  "models_tested": [
+    "GPT-4-Turbo",
+    "LLaMA-3-70B",
+    "Qwen-1.5-72B",
+    "Mistral-Large"
+  ],
+  "styles_tested": [
+    "angry",
+    "curious",
+    "desperate",
+    "fearful",
+    "flattering",
+    "kind",
+    "passive_aggressive",
+    "polite",
+    "sad",
+    "scolding",
+    "threatening"
+  ],
+  "results": {
+    "neutral_asr": 0.2083,
+    "stylized_asr": 0.2856,
+    "asr_increase": 0.0773,
+    "most_effective_style": "flattering",
+    "most_vulnerable_model": "Qwen-1.5-72B"
+  }
+}

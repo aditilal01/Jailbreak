@@ -1,0 +1,17 @@
+# Say It Differently - Linguistic Styles as Jailbreak Vectors
+# Core dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+pyyaml>=6.0
+tqdm>=4.65.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# LLM APIs (optional - for real model inference)
+openai>=1.0.0
+transformers>=4.35.0
+
+# Notebook support
+jupyter>=1.0.0
